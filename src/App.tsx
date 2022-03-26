@@ -1,10 +1,13 @@
 import React from 'react';
-import AppAppBar from './modules/views/AppAppBar'
+import {Form} from './components/Form';
+import { useState } from 'react';
+
 
 function App() {
+  
   return (
     <div className="App">
-      <AppAppBar />
+     <Form />
     </div>
   );
 }
