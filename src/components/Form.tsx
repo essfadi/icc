@@ -79,6 +79,7 @@ const init = {
 export const Form = () => {
   const [error, seterror] = useState('')
   const [state, setstate] = useState(init)
+  let calories = 0
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -91,6 +92,15 @@ export const Form = () => {
       }
     }
     seterror('')
+    var w: number = +state.weight
+    var h: number = +state.height
+    var a: number = +state.age
+
+    if(state.gender === 'male')
+      calories = 13 * w + 5 * h - 6 * a
+    else 
+      calories = 450 + 9 * w + 3 * h - 4 * a
+    console.log(calories)
   }
 
   const handleChange = (e) => {
