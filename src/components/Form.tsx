@@ -92,14 +92,11 @@ export const Form = () => {
       }
     }
     seterror('')
-    var w: number = +state.weight
-    var h: number = +state.height
-    var a: number = +state.age
 
     if(state.gender === 'male')
-      calories = 13 * w + 5 * h - 6 * a
+      calories = 13 * (+state.weight) + 5 * (+state.height) - 6 * (+state.age)
     else 
-      calories = 450 + 9 * w + 3 * h - 4 * a
+      calories = 450 + 9 * (+state.weight) + 3 * (+state.height) - 4 * (+state.age)
     console.log(calories)
   }
 
