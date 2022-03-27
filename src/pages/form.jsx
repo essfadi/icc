@@ -2,6 +2,7 @@ import styled, { createGlobalStyle, css } from "styled-components";
 import { useState } from "react";
 import Sidebar from "../components/SideBar";
 import Navbar from "../components/Navbar";
+import Result from "../components/Result";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -110,7 +111,6 @@ export const Form = () => {
     if (state.gender === "male")
       setcalories(13 * state.weight + 5 * state.height - 6 * state.age);
     else setcalories(450 + 9 * state.weight + 3 * state.height - 4 * state.age);
-    console.log(calories);
   };
 
   const handleChange = (e) => {
@@ -184,6 +184,7 @@ export const Form = () => {
           {error && <StyledError>{error}</StyledError>}
         </StyledForm>
       </StyledFormWrapper>
+      {calories === "" ? "" : <Result caloriesResult={calories} />}
     </>
   );
 };

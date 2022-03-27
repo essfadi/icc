@@ -16,7 +16,6 @@ const StyledRating = styled(Rating)({
 });
 
 const Meal = ({ calories, content, image, type, rating }) => {
-  console.log(calories, content, image, type);
   return (
     <Box>
       <ImageHolder>
