@@ -83,7 +83,6 @@ export const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(state)
 
     for(let key in state){
       if(state[key] === ''){
@@ -94,9 +93,9 @@ export const Form = () => {
     seterror('')
 
     if(state.gender === 'male')
-      setcalories((13 * parseInt(state.weight) + 5 * parseInt(state.height) - 6 * parseInt(state.age)).toString())
+      setcalories(13 * state.weight + 5 * state.height - 6 * state.age)
     else 
-      setcalories((450 + 9 * parseInt(state.weight) + 3 * parseInt(state.height) - 4 * parseInt(state.age)).toString())
+      setcalories(450 + 9 * state.weight + 3 * state.height - 4 * state.age)
     console.log(calories)
   }
 
